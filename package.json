@@ -1,0 +1,55 @@
+{
+  "name": "material-ui-edit-table",
+  "version": "1.0.0",
+  "description": "Material UI Edit Table",
+  "main": "index.js",
+  "browser": "index.js",
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
+    ]
+  },
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "example": "budo example/demo.jsx",
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emkay/material-ui-edit-table.git"
+  },
+  "keywords": [
+    "material",
+    "ui",
+    "edit",
+    "table"
+  ],
+  "author": "Michael Matuzak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emkay/material-ui-edit-table/issues"
+  },
+  "homepage": "https://github.com/emkay/material-ui-edit-table#readme",
+  "dependencies": {
+    "concat-stream": "^1.5.1",
+    "filereader-stream": "^1.0.0",
+    "lodash.times": "^4.0.2",
+    "material-ui": "^0.14.4",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-tap-event-plugin": "^0.2.2"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "budo": "^8.1.0",
+    "reactify": "^1.1.1",
+    "standard": "^6.0.8"
+  }
+}
