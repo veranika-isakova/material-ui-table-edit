@@ -54,7 +54,7 @@ module.exports = React.createClass({
     }
 
     const onToggle = (e) => {
-      const rows = self.state.rows
+      let rows = self.state.rows
       rows[rowId].columns[id].value = !rows[rowId].columns[id].value
       self.setState({rows: rows})
     }
