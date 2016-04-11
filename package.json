@@ -1,6 +1,6 @@
 {
   "name": "material-ui-table-edit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Material UI Edit Table",
   "main": "index.js",
   "browser": "index.js",
@@ -19,7 +19,9 @@
   },
   "scripts": {
     "example": "budo example/demo.jsx",
-    "test": "standard"
+    "test": "standard",
+    "release": "npm run test && standard-version && git push --tags; git push origin master; npm publish",
+    "first": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -48,6 +50,7 @@
     "browserify": "^13.0.0",
     "budo": "^8.1.0",
     "reactify": "^1.1.1",
-    "standard": "^6.0.8"
+    "standard": "^6.0.8",
+    "standard-version": "^2.1.2"
   }
 }
