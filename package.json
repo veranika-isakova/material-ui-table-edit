@@ -20,8 +20,7 @@
   "scripts": {
     "example": "budo example/demo.jsx",
     "test": "standard",
-    "release": "npm run test && standard-version && git push --tags; git push origin master; npm publish",
-    "first": "standard-version"
+    "release": "npm run test && standard-version && git push --tags; git push origin master; npm publish"
   },
   "repository": {
     "type": "git",
@@ -43,13 +42,13 @@
     "lodash.times": "^4.0.2",
     "material-ui": "^0.14.4",
     "react": "^0.14.7",
-    "react-dom": "^0.14.7",
     "react-tap-event-plugin": "^0.2.2"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
     "budo": "^8.1.0",
     "reactify": "^1.1.1",
+    "react-dom": "^0.14.7",
     "standard": "^6.0.8",
     "standard-version": "^2.1.2"
   }
