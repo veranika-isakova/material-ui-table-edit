@@ -85,7 +85,7 @@ module.exports = React.createClass({
     return <TextField
       style={textFieldStyle}
       disabled
-      value={Array.isArray(value) ? value.length : value}
+      value={value}
     />
   },
 
