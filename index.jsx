@@ -3,8 +3,6 @@ const mui = require('material-ui')
 const ModeEdit = require('material-ui/lib/svg-icons/editor/mode-edit')
 const Check = require('material-ui/lib/svg-icons/navigation/check')
 const times = require('lodash.times')
-const fileReaderStream = require('filereader-stream')
-const concat = require('concat-stream')
 const {IconButton, Toggle, TextField, RaisedButton} = mui
 
 module.exports = React.createClass({
@@ -50,7 +48,7 @@ module.exports = React.createClass({
     const onTextFieldChange = (e) => {
       const target = e.target
       const value = target.value
-      const rows = self.state.rows
+      let rows = self.state.rows
       rows[rowId].columns[id].value = value
       self.setState({rows: rows})
     }
@@ -59,41 +57,6 @@ module.exports = React.createClass({
       const rows = self.state.rows
       rows[rowId].columns[id].value = !rows[rowId].columns[id].value
       self.setState({rows: rows})
-    }
-
-    const onMouseEnter = (e) => {
-      const hv = 'Upload'
-      self.setState({hoverValue: hv})
-    }
-
-    const onMouseLeave = (e) => {
-      self.setState({hoverValue: false})
-    }
-
-    const onFileUpload = (e) => {
-      const rows = self.state.rows
-      const files = e.target.files
-      const file = files[0]
-
-      fileReaderStream(file).pipe(concat({encoding: 'string'}, (contents) => {
-        const data = contents.split('\n').map((line) => {
-          return line.replace('\r', '')
-        })
-
-        rows[rowId].columns[id].value = data
-        self.setState({rows: rows})
-      }))
-    }
-
-    const inputStyle = {
-      cursor: 'pointer',
-      position: 'absolute',
-      top: 0,
-      bottom: 0,
-      right: 0,
-      left: 0,
-      width: '100%',
-      opacity: 0
     }
 
     if (header || (type && type === 'ReadOnly')) {
@@ -109,18 +72,6 @@ module.exports = React.createClass({
             value={value}
           />
         }
-
-        if (type === 'FileUpload') {
-          return (
-            <RaisedButton
-              label={self.state.hoverValue || (value.length > 0 ? value.length : 'Upload')}
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}>
-              <input style={inputStyle} type='file' onChange={onFileUpload}/>
-            </RaisedButton>
-          )
-        }
-
         if (type === 'Toggle') {
           return <Toggle onToggle={onToggle} toggled={value} />
         }
@@ -260,8 +211,7 @@ module.exports = React.createClass({
       const newColumns = times(columnTypes.length, (index) => {
         const defaults = {
           'TextField': '',
-          'Toggle': true,
-          'FileUpload': []
+          'Toggle': true
         }
 
         const value = defaults[columnTypes[index]]

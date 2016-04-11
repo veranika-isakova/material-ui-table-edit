@@ -1,5 +1,5 @@
 {
-  "name": "material-ui-edit-table",
+  "name": "material-ui-table-edit",
   "version": "1.0.0",
   "description": "Material UI Edit Table",
   "main": "index.js",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emkay/material-ui-edit-table.git"
+    "url": "git+https://github.com/emkay/material-ui-table-edit.git"
   },
   "keywords": [
     "material",
@@ -34,12 +34,10 @@
   "author": "Michael Matuzak",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/emkay/material-ui-edit-table/issues"
+    "url": "https://github.com/emkay/material-ui-table-edit/issues"
   },
-  "homepage": "https://github.com/emkay/material-ui-edit-table#readme",
+  "homepage": "https://github.com/emkay/material-ui-table-edit#readme",
   "dependencies": {
-    "concat-stream": "^1.5.1",
-    "filereader-stream": "^1.0.0",
     "lodash.times": "^4.0.2",
     "material-ui": "^0.14.4",
     "react": "^0.14.7",
