@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.3"></a>
+## [2.0.3](https://github.com/emkay/material-ui-table-edit/compare/v2.0.2...v2.0.3) (2016-04-15)
+
+
+### Bug Fixes
+
+* `reactify` needs to be a dependency ([e1c7b0d](https://github.com/emkay/material-ui-table-edit/commit/e1c7b0d))
+
+
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/emkay/material-ui-table-edit/compare/v2.0.1...v2.0.2) (2016-04-15)
 
