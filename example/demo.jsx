@@ -1,5 +1,7 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
+const getMuiTheme = require('material-ui/styles/getMuiTheme').default
+const baseTheme = require('material-ui/styles/baseThemes/darkBaseTheme')
 const EditTable = require('../index.jsx')
 const container = document.createElement('div')
 
@@ -40,11 +42,27 @@ const onChange = (row) => {
   console.log(row)
 }
 
+const Main = React.createClass({
+  getChildContext () {
+    return {muiTheme: getMuiTheme(baseTheme)}
+  },
+
+  childContextTypes: {
+    muiTheme: React.PropTypes.object.isRequired
+  },
+
+  render () {
+    return (
+      <EditTable
+        onChange={onChange}
+        rows={rows}
+        headerColumns={headers}
+      />
+    )
+  }
+})
+
 ReactDOM.render(
-  <EditTable
-    onChange={onChange}
-    rows={rows}
-    headerColumns={headers}
-  />,
+  <Main />,
   container
 )

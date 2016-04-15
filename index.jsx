@@ -1,7 +1,7 @@
 const React = require('react')
 const mui = require('material-ui')
-const ModeEdit = require('material-ui/lib/svg-icons/editor/mode-edit')
-const Check = require('material-ui/lib/svg-icons/navigation/check')
+const ModeEdit = require('material-ui/svg-icons/editor/mode-edit').default
+const Check = require('material-ui/svg-icons/navigation/check').default
 const times = require('lodash.times')
 const {IconButton, Toggle, TextField, RaisedButton} = mui
 
@@ -22,6 +22,10 @@ module.exports = React.createClass({
     }
   },
 
+  contextTypes: {
+    muiTheme: React.PropTypes.object.isRequired
+  },
+
   update: function () {
     const row = this.state.rows.filter((row) => {
       return row.selected
@@ -40,6 +44,7 @@ module.exports = React.createClass({
     const rowId = cell && cell.rowId
     const header = cell && cell.header
     const width = cell && cell.width
+    const textFieldId = [id, rowId, header].join('-')
 
     const textFieldStyle = {
       width: width
@@ -67,6 +72,7 @@ module.exports = React.createClass({
       if (selected) {
         if (type === 'TextField') {
           return <TextField
+            id={textFieldId}
             onChange={onTextFieldChange}
             style={textFieldStyle}
             value={value}
@@ -83,6 +89,7 @@ module.exports = React.createClass({
     }
 
     return <TextField
+      id={textFieldId}
       style={textFieldStyle}
       disabled
       value={value}
