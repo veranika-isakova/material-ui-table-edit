@@ -53,13 +53,13 @@ module.exports = React.createClass({
     const onTextFieldChange = (e) => {
       const target = e.target
       const value = target.value
-      let rows = self.state.rows
+      var rows = self.state.rows
       rows[rowId].columns[id].value = value
       self.setState({rows: rows})
     }
 
     const onToggle = (e) => {
-      let rows = self.state.rows
+      var rows = self.state.rows
       rows[rowId].columns[id].value = !rows[rowId].columns[id].value
       self.setState({rows: rows})
     }
@@ -130,7 +130,7 @@ module.exports = React.createClass({
     const rowKey = ['row', rowId].join('-')
 
     const onRowClick = function (e) {
-      let rows = self.state.rows
+      var rows = self.state.rows
       rows.forEach((row, i) => {
         if (rowId !== i) row.selected = false
       })
