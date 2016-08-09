@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/emkay/material-ui-table-edit/compare/v2.0.4...v3.0.0) (2016-08-09)
+
+
+### Bug Fixes
+
+* **compile:** publish package with compiled source ([cdac0d6](https://github.com/emkay/material-ui-table-edit/commit/cdac0d6))
+
+
+### BREAKING CHANGES
+
+* compile: this might be breaking erroring
+
+
+
 <a name="2.0.4"></a>
 ## [2.0.4](https://github.com/emkay/material-ui-table-edit/compare/v2.0.3...v2.0.4) (2016-05-05)
 
