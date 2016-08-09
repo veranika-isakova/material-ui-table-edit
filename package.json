@@ -24,7 +24,7 @@
     "compile": "babel index.jsx --presets es2015,react | uglifyjs -mc > dist.js",
     "example": "budo example/demo.jsx",
     "test": "standard",
-    "prepublish": "",
+    "prepublish": "npm run compile",
     "release": "npm run test && standard-version && git push --tags; git push origin master; npm publish"
   },
   "repository": {
