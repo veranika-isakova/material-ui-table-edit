@@ -25,7 +25,9 @@
     "example": "budo example/demo.jsx",
     "test": "standard",
     "prepublish": "npm run compile",
-    "release": "npm run test && standard-version && git push --tags; git push origin master; npm publish"
+    "release": "npm run test && standard-version && git push --tags; git push origin master; npm publish",
+    "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+    "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
   },
   "repository": {
     "type": "git",
@@ -37,7 +39,11 @@
     "edit",
     "table"
   ],
-  "author": "Michael Matuzak",
+  "author": {
+    "name": "Michael Matuzak",
+    "email": "mmatuzak@gmail.com",
+    "twitter": "@mmatuzak"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/emkay/material-ui-table-edit/issues"
@@ -59,6 +65,8 @@
     "react-dom": "^15.0.0",
     "standard": "^6.0.8",
     "standard-version": "^2.1.2",
-    "uglify-js": "^2.7.0"
+    "uglify-js": "^2.7.0",
+    "weallbehave": "^1.2.0",
+    "weallcontribute": "^1.0.8"
   }
 }
