@@ -57,3 +57,9 @@ ReactDOM.render(
   container
 )
 ```
+
+## [Code of Conduct](https://github.com/emkay/material-ui-table-edit/blob/master/CODE_OF_CONDUCT.md)
+
+## [Contributing](https://github.com/emkay/material-ui-table-edit/blob/master/CONTRIBUTING.md)
+
+## [Changelog](https://github.com/emkay/material-ui-table-edit/blob/master/CHANGELOG.md)
