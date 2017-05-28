@@ -4,8 +4,8 @@ const ModeEdit = require('material-ui/svg-icons/editor/mode-edit').default
 const Check = require('material-ui/svg-icons/navigation/check').default
 const times = require('lodash.times')
 const {IconButton, Toggle, TextField, RaisedButton, DatePicker} = mui
-const injectTapEventPlugin = require("react-tap-event-plugin");
-injectTapEventPlugin();
+const injectTapEventPlugin = require('react-tap-event-plugin')
+injectTapEventPlugin()
 
 module.exports = React.createClass({
   getDefaultProps: () => {
@@ -95,7 +95,7 @@ module.exports = React.createClass({
           return <DatePicker
             id={datePickerId}
             onChange={onDatePickerChange}
-            mode="landscape"
+            mode='landscape'
             style={datePickerStyle}
             value={value}
           />
