@@ -1,6 +1,8 @@
 # material-ui-table-edit
 Material UI Table Edit
 
+<img src="https://travis-ci.org/emkay/material-ui-table-edit.svg?branch=master">
+
 <img src="https://raw.githubusercontent.com/emkay/material-ui-table-edit/master/example/table-editor.gif">
 
 ## Install
