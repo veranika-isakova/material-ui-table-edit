@@ -174,7 +174,7 @@ module.exports = React.createClass({
       onRowClick(e)
     }
 
-    const checkbox = row.header ? <div style={checkboxStyle}/>
+    const checkbox = row.header ? <div style={checkboxStyle} />
       : <IconButton style={checkboxStyle} tooltip={tooltip} onClick={onClick}>
         {button}
       </IconButton>
