@@ -23,7 +23,6 @@ module.exports = React.createClass({
       rows: this.props.rows,
       hoverValue: false,
       currentRow: false,
-      rowOnDelete: -1,
     }
   },
 
