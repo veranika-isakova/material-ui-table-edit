@@ -2,8 +2,9 @@ const React = require('react')
 const mui = require('material-ui')
 const ModeEdit = require('material-ui/svg-icons/editor/mode-edit').default
 const Check = require('material-ui/svg-icons/navigation/check').default
+const Delete = require('material-ui/svg-icons/action/delete').default
 const times = require('lodash.times')
-const {IconButton, Toggle, TextField, RaisedButton, DatePicker} = mui
+const {IconButton, Toggle, TextField, RaisedButton, DatePicker } = mui
 const injectTapEventPlugin = require('react-tap-event-plugin')
 injectTapEventPlugin()
 
@@ -12,7 +13,8 @@ module.exports = React.createClass({
     return {
       headerColumns: [],
       rows: [],
-      onChange: function () {}
+      enableDelete: true,
+      onChange: function () {},
     }
   },
 
@@ -20,7 +22,8 @@ module.exports = React.createClass({
     return {
       rows: this.props.rows,
       hoverValue: false,
-      currentRow: false
+      currentRow: false,
+      rowOnDelete: -1,
     }
   },
 
@@ -107,6 +110,16 @@ module.exports = React.createClass({
         if (type === 'Toggle') {
           return <Toggle disabled onToggle={onToggle} toggled={value} />
         }
+        if (type === 'DatePicker') {
+          return <DatePicker
+            id={datePickerId}
+            onChange={onDatePickerChange}
+            mode='landscape'
+            style={datePickerStyle}
+            value={value}
+            disabled={true}
+          />
+        }
       }
     }
 
@@ -148,6 +161,15 @@ module.exports = React.createClass({
       alignItems: 'center'
     }
 
+    const deleteButtonStyle = {
+      display: 'flex',
+      flexFlow: 'row nowrap',
+      width: 50,
+      height: 24,
+      alignItems: 'center',
+      padding: '0 12 0'
+    }
+
     const rowId = row.id
     const rowKey = ['row', rowId].join('-')
 
@@ -166,6 +188,18 @@ module.exports = React.createClass({
     const button = selected ? <Check /> : <ModeEdit />
     const tooltip = selected ? 'Done' : 'Edit'
 
+    const onDeleteRow = function (e) {
+      var rows = self.state.rows
+      rows.forEach((row, i) => {
+        if (rowId === i) rows.splice(i, 1)
+      });
+      //re-order the rowId after splice.
+      rows.forEach((row, i) => {
+        row.id = i;
+      });
+      self.setState({rows:rows})
+    }
+
     const onClick = function (e) {
       if (selected) {
         self.update()
@@ -173,6 +207,11 @@ module.exports = React.createClass({
 
       onRowClick(e)
     }
+
+    const deleteButton = (!this.props.enableDelete || selected || row.header) ? <div style={deleteButtonStyle}/>
+      : <IconButton style={deleteButtonStyle} tooltip={"Delete this row"} onClick={onDeleteRow}>
+        <Delete/>
+      </IconButton>
 
     const checkbox = row.header ? <div style={checkboxStyle} />
       : <IconButton style={checkboxStyle} tooltip={tooltip} onClick={onClick}>
@@ -209,6 +248,7 @@ module.exports = React.createClass({
             </div>
           )
         })}
+        {deleteButton}
       </div>
     )
   },
