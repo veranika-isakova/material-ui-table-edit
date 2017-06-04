@@ -4,7 +4,7 @@ const ModeEdit = require('material-ui/svg-icons/editor/mode-edit').default
 const Check = require('material-ui/svg-icons/navigation/check').default
 const Delete = require('material-ui/svg-icons/action/delete').default
 const times = require('lodash.times')
-const {IconButton, Toggle, TextField, RaisedButton, DatePicker } = mui
+const {IconButton, Toggle, TextField, RaisedButton, DatePicker} = mui
 const injectTapEventPlugin = require('react-tap-event-plugin')
 injectTapEventPlugin()
 
@@ -14,7 +14,7 @@ module.exports = React.createClass({
       headerColumns: [],
       rows: [],
       enableDelete: true,
-      onChange: function () {},
+      onChange: function () {}
     }
   },
 
@@ -22,7 +22,7 @@ module.exports = React.createClass({
     return {
       rows: this.props.rows,
       hoverValue: false,
-      currentRow: false,
+      currentRow: false
     }
   },
 
@@ -116,7 +116,7 @@ module.exports = React.createClass({
             mode='landscape'
             style={datePickerStyle}
             value={value}
-            disabled={true}
+            disabled={Boolean(true)}
           />
         }
       }
@@ -191,12 +191,11 @@ module.exports = React.createClass({
       var rows = self.state.rows
       rows.forEach((row, i) => {
         if (rowId === i) rows.splice(i, 1)
-      });
-      //re-order the rowId after splice.
+      })
       rows.forEach((row, i) => {
-        row.id = i;
-      });
-      self.setState({rows:rows})
+        row.id = i
+      })
+      self.setState({rows: rows})
     }
 
     const onClick = function (e) {
