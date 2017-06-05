@@ -61,7 +61,7 @@ const Main = React.createClass({
         onChange={onChange}
         rows={rows}
         headerColumns={headers}
-        enableDelete={true}
+        enableDelete={Boolean(true)}
       />
     )
   }

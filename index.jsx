@@ -206,9 +206,9 @@ module.exports = React.createClass({
       onRowClick(e)
     }
 
-    const deleteButton = (!this.props.enableDelete || selected || row.header) ? <div style={deleteButtonStyle}/>
-      : <IconButton style={deleteButtonStyle} tooltip={"Delete this row"} onClick={onDeleteRow}>
-        <Delete/>
+    const deleteButton = (!this.props.enableDelete || selected || row.header) ? <div style={deleteButtonStyle} />
+      : <IconButton style={deleteButtonStyle} tooltip={'Delete this row'} onClick={onDeleteRow}>
+        <Delete />
       </IconButton>
 
     const checkbox = row.header ? <div style={checkboxStyle} />
