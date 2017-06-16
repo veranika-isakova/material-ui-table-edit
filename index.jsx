@@ -201,7 +201,7 @@ module.exports = React.createClass({
         row.id = i
       })
       self.setState({rows: rows})
-      if (deleteEvent !== {}) this.props.onDelete(deleteEvent)
+      if (deleteEvent !== {}) self.props.onDelete(deleteEvent)
     }
 
     const onClick = function (e) {
