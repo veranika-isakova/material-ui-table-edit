@@ -14,7 +14,8 @@ module.exports = React.createClass({
       headerColumns: [],
       rows: [],
       enableDelete: true,
-      onChange: function () {}
+      onChange: function () {},
+      onDelete: function () {}
     }
   },
 
@@ -189,13 +190,18 @@ module.exports = React.createClass({
 
     const onDeleteRow = function (e) {
       var rows = self.state.rows
+      var deleteEvent = {}
       rows.forEach((row, i) => {
-        if (rowId === i) rows.splice(i, 1)
+        if (rowId === i) {
+          rows.splice(i, 1)
+          deleteEvent = {rowId, row}
+        }
       })
       rows.forEach((row, i) => {
         row.id = i
       })
       self.setState({rows: rows})
+      if (deleteEvent !== {}) this.props.onDelete(deleteEvent)
     }
 
     const onClick = function (e) {

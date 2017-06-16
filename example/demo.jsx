@@ -46,6 +46,10 @@ const onChange = (row) => {
   console.log(row)
 }
 
+const onDelete = (e) => {
+  console.log(e)
+}
+
 const Main = React.createClass({
   getChildContext () {
     return {muiTheme: getMuiTheme(baseTheme)}
@@ -59,6 +63,7 @@ const Main = React.createClass({
     return (
       <EditTable
         onChange={onChange}
+        onDelete={onDelete}
         rows={rows}
         headerColumns={headers}
         enableDelete={Boolean(true)}
