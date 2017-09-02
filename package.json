@@ -51,7 +51,7 @@
   "homepage": "https://github.com/emkay/material-ui-table-edit#readme",
   "dependencies": {
     "lodash.times": "^4.0.2",
-    "material-ui": "^0.18.0",
+    "material-ui": "^0.19.1",
     "react": "^15.0.0",
     "react-tap-event-plugin": "^2.0.0"
   },
