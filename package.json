@@ -62,7 +62,7 @@
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "budo": "^10.0.3",
-    "react-dom": "^15.0.0",
+    "react-dom": "^16.0.0",
     "standard": "^10.0.2",
     "standard-version": "^4.0.0",
     "uglify-js": "^3.0.13",
