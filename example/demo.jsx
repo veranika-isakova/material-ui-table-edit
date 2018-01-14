@@ -3,6 +3,8 @@ const ReactDOM = require('react-dom')
 const getMuiTheme = require('material-ui/styles/getMuiTheme').default
 const baseTheme = require('material-ui/styles/baseThemes/darkBaseTheme')
 const EditTable = require('..')
+const PropTypes = require('prop-types')
+const createReactClass = require('create-react-class')
 const container = document.createElement('div')
 
 document.body.appendChild(container)
@@ -50,13 +52,13 @@ const onDelete = (e) => {
   console.log(e)
 }
 
-const Main = React.createClass({
+const Main = createReactClass({
   getChildContext () {
     return {muiTheme: getMuiTheme(baseTheme)}
   },
 
   childContextTypes: {
-    muiTheme: React.PropTypes.object.isRequired
+    muiTheme: PropTypes.object.isRequired
   },
 
   render () {

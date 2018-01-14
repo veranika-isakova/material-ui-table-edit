@@ -5,10 +5,12 @@ const Check = require('material-ui/svg-icons/navigation/check').default
 const Delete = require('material-ui/svg-icons/action/delete').default
 const times = require('lodash.times')
 const {IconButton, Toggle, TextField, RaisedButton, DatePicker} = mui
+const PropTypes = require('prop-types')
+const createReactClass = require('create-react-class')
 const injectTapEventPlugin = require('react-tap-event-plugin')
 injectTapEventPlugin()
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   getDefaultProps: () => {
     return {
       headerColumns: [],
@@ -28,7 +30,7 @@ module.exports = React.createClass({
   },
 
   contextTypes: {
-    muiTheme: React.PropTypes.object.isRequired
+    muiTheme: PropTypes.object.isRequired
   },
 
   update: function () {
